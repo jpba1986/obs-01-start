@@ -22,6 +22,9 @@ export class HomeComponent implements OnInit {
      let count = 0 ;
       setInterval(()=>{
         observer.next(count);
+        if (count >3){
+          observer.console.error(new Error ('Count is greater 3!'));          
+        }
         count++;
       },1000);
     });
